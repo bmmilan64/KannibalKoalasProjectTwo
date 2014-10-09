@@ -21,10 +21,10 @@ public class HealthBarScript : MonoBehaviour
 
 	void OnGUI () 
 	{
-		GUI.Box(new Rect(10, 10, healthBarLength, 20), currentHealth / maxHealth);
+		GUI.Box(new Rect(10, 10, healthBarLength, 20), currentHealth + " /" + maxHealth);
 	}
 
-	public void AdjustcurHealth (int adj) 
+	public void AdjustCurrentHealth (int adj) 
 	{
 		currentHealth += adj;
 
