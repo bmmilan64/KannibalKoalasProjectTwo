@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Enemy : Character {
-
+	public bool isCrier = false;
+	public bool isInsulter = false;
+	public bool isHugger = false;
 
 	//Attributes
 	float timer;
@@ -15,7 +17,13 @@ public class Enemy : Character {
 		timer = 0.0f;
 		randVal = 0.0f;
 		beaten = false;
+		hp = 10;
+
+
 	}
+	public virtual bool Cry(){return false;}
+	public virtual void shootInsults(){}
+	public virtual void Hugging(){}
 
 	public void randMovement(){
 		//if timer does not work just do random chnaces with high prob of not moving

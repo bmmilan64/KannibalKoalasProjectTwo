@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HealthScript : MonoBehaviour {
-
+	public GameObject ItemPre;
 	/// Total hitpoints
 	public int hp = 1;
 
@@ -17,6 +17,11 @@ public class HealthScript : MonoBehaviour {
 		
 		if (hp <= 0)
 		{
+			if(isEnemy == true){
+				GameObject it;
+				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
+				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);
+			}
 			// Dead!
 			Destroy(gameObject);
 		}

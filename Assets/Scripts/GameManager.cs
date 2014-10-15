@@ -59,7 +59,8 @@ public class GameManager : MonoBehaviour {
 			}
 			enemies.Add(en);
 		}
-		
+
+		/* under update could add a tag dtating it appeared if you need it.....
 		for(int i = 0; i< numEnemies; i++){
 			GameObject it;
 			Vector3 itLoc = new Vector3( enemies[i].transform.position.x, enemies[i].transform.position.y, enemies[i].transform.position.z );
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour {
 			
 			itemList.Add(it);
 		}
-		
+		*/
 		//camera
 		//Vector3 camPos = new Vector3 (-12.0f,-3.0f,-10.0f);
 		
@@ -79,23 +80,43 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		for(int i = 0; i<numEnemies; i++){
 			//check if y values are close
-			if(Mathf.Abs (enemies[i].transform.position.y) - Mathf.Abs ( daLeader.transform.position.y) <=2.0f && 
-			   Mathf.Abs (enemies[i].transform.position.y) - Mathf.Abs ( daLeader.transform.position.y) >= -2.0f ){
+			if(Mathf.Abs (enemies[i].transform.position.y) - Mathf.Abs ( daLeader.transform.position.y) <=5.0f && 
+			   Mathf.Abs (enemies[i].transform.position.y) - Mathf.Abs ( daLeader.transform.position.y) >= -5.0f ){
 				//checks the x values are close
-				if(Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) <=2.0f && 
-				   Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) >= -2.0f ){
-					//	if close and 'press x to hug'
-					if (Input.GetKeyDown (KeyCode.X))
-					{
-						//enemies[i].renderer.material.color = Color.red;
-						//enemies[i].transform.scale.x = 0.25f;
+				if(Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) <=5.0f && 
+				   Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) >= -5.0f ){
+
+					//for insulter
+					if(enemies[i].isInsulter == true){
+					
 					}
+					//for hugger
+					if(enemies[i].isHugger == true){
+
+					}
+					//for crier
+					if(enemies[i].isCrier == true){
+						if(enemies[i].Cry() == true){
+							daLeader.LoseHP(1);
+						}
+						if(Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) <=5.0f && 
+						   Mathf.Abs (enemies[i].transform.position.x) - Mathf.Abs ( daLeader.transform.position.x) >= -5.0f ){
+								if (Input.GetKeyDown (KeyCode.X)){
+									Destroy(enemies[i]);
+								}
+						}
+					}
+
+
+
 				}
 			}
 		}
-		
+
+	
 		
 	}
 }

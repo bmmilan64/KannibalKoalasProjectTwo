@@ -38,9 +38,14 @@ public class PlayerScript : Character {
 		levelJoke = 1;
 		levelHug = 1;
 		levelEvileye = 1;
+		hp  =100;
 		
 	}
-	
+
+	public void sadden(){
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 		/*For some reason it only moves once per click..... ><
@@ -137,7 +142,10 @@ public class PlayerScript : Character {
 			}
 		}
 	}
-	
+	public void LoseHP(int val){
+		this.hp -= val;
+	}
+
 	void FixedUpdate()
 	{
 		// 5 - Move the game object

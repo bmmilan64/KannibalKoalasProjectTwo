@@ -5,8 +5,12 @@ public class Hugger : Enemy {
 	public bool daHug;
 	// Use this for initialization
 	void Start () {
-		daHug = true;
+		siHugger = true;
 		//beaten = false;
+	}
+
+	public override void Hugging(){
+
 	}
 	
 	// Update is called once per frame
