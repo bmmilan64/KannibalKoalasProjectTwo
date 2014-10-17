@@ -17,13 +17,63 @@ public class HealthScript : MonoBehaviour {
 		
 		if (hp <= 0)
 		{
-			if(isEnemy == true){
+			//print(gameObject.name);
+			if(gameObject.name == "Crier(Clone)"){
+
+				print ("IM DONE WITH THIS PROJECT");
+				GameObject daGM = GameObject.FindGameObjectWithTag("GM");
+				GameManager GMInfo = daGM.GetComponent<GameManager>();
+				GameObject daPlayer = GameObject.FindGameObjectWithTag("PlayerTag");
+				PlayerScript playerInfo = daPlayer.GetComponent<PlayerScript>();
+
+				//change hp for killing wrong way
+				playerInfo.hp-=5;
+
+				//gets rid of crier
+				GMInfo.enemies.Remove(gameObject);
+				Destroy(gameObject);
+
+				//spawns item
 				GameObject it;
 				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
-				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);
+				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
 			}
-			// Dead!
-			Destroy(gameObject);
+			if(gameObject.name == "Hugger(Clone)"){
+				GameObject daGM = GameObject.FindGameObjectWithTag("GM");
+				GameManager GMInfo = daGM.GetComponent<GameManager>();
+				GameObject daPlayer = GameObject.FindGameObjectWithTag("PlayerTag");
+				PlayerScript playerInfo = daPlayer.GetComponent<PlayerScript>();
+				
+				//change hp for killing wrong way
+				playerInfo.hp-=5;
+				
+				//gets rid of hugger
+				GMInfo.enemies.Remove(gameObject);
+				Destroy(gameObject);
+				
+				//spawns item
+				GameObject it;
+				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
+				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+			}
+			if(gameObject.name == "Insulter(Clone)"){
+				GameObject daGM = GameObject.FindGameObjectWithTag("GM");
+				GameManager GMInfo = daGM.GetComponent<GameManager>();
+				GameObject daPlayer = GameObject.FindGameObjectWithTag("PlayerTag");
+				PlayerScript playerInfo = daPlayer.GetComponent<PlayerScript>();
+				
+				//change hp for killing wrong way
+				playerInfo.hp+=5;
+				
+				//gets rid of hugger
+				GMInfo.enemies.Remove(gameObject);
+				Destroy(gameObject);
+				
+				//spawns item
+				GameObject it;
+				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
+				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+			}
 		}
 	}
 	
@@ -37,10 +87,12 @@ public class HealthScript : MonoBehaviour {
 			if (shot.isEnemyShot != isEnemy)
 			{
 				Damage(shot.damage);
-				
+
 				// Destroy the shot
 				Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 			}
 		}
+
+
 	}
 }

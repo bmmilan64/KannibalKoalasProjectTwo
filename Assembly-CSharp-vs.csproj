@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
-     <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Hugger.cs" />
      <Compile Include="Assets\Scripts\Insulter.cs" />

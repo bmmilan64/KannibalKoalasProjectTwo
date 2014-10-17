@@ -17,10 +17,13 @@ public class ShotScript : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collider)
 	{
-		Debug.Log("Collide with wall");
-		if(collider.gameObject.name == "wall_horizontal" || collider.gameObject.name == "vertical")
+		print("hit2"); //this one never gets called for some reason
+
+		if(collider.gameObject.name == "wall_horizontal" || collider.gameObject.name == "vertical" || collider.gameObject.name == "wall_vertical")
 		{
 			Destroy(gameObject);
 		}
+
 	}
+
 }

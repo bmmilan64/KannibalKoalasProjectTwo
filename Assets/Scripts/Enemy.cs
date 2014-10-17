@@ -18,11 +18,11 @@ public class Enemy : Character {
 		randVal = 0.0f;
 		beaten = false;
 		hp = 10;
-
-
 	}
-	public virtual bool Cry(){return false;}
+	public virtual void Cry(){}
+
 	public virtual void shootInsults(){}
+
 	public virtual void Hugging(){}
 
 	public void randMovement(){
@@ -32,25 +32,26 @@ public class Enemy : Character {
 		//move after certain amount of time
 		if(timer >=1.0f){
 			randVal = Random.Range(0,4);
-			if(randVal >= 0.0f && randVal <1.0f){
-				this.transform.position +=  transform.up * 1.0f;
-			}
-			else if(randVal >= 1.0f && randVal <2.0f){
-				this.transform.position +=  transform.right * -1.0f;
-			}
-			else if(randVal >= 2.0f && randVal <3.0f){
-				this.transform.position +=  transform.up * -1.0f;
-			}
-			else{
-				this.transform.position +=  transform.right * 1.0f;
-			}
-
 			timer = 0.0f;
 		}
+			if(randVal >= 0.0f && randVal <1.0f){
+				this.transform.position +=  transform.up * 0.05f;
+			}
+			else if(randVal >= 1.0f && randVal <2.0f){
+				this.transform.position +=  transform.right * -0.05f;
+			}
+			else if(randVal >= 2.0f && randVal <3.0f){
+				this.transform.position +=  transform.up * -0.05f;
+			}
+			else{
+				this.transform.position +=  transform.right * 0.05f;
+			}
+
+			
+		//}
 		//chill time
-		else{
+
 			timer = timer + Time.deltaTime;
-		}
 
 	}
 	/*
