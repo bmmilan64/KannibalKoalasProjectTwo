@@ -53,16 +53,21 @@
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Hugger.cs" />
+     <Compile Include="Assets\Scripts\InstructionsScript.cs" />
      <Compile Include="Assets\Scripts\Insulter.cs" />
      <Compile Include="Assets\Scripts\Items.cs" />
      <Compile Include="Assets\Scripts\Leader.cs" />
+     <Compile Include="Assets\Scripts\Map.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\SmoothFollowScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
+     <Compile Include="Assets\Scripts\daJokes.cs" />
      <Compile Include="Assets\Scripts\flyingInsult.cs" />
+     <Compile Include="Assets\Scripts\huggingScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

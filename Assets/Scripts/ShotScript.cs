@@ -17,7 +17,7 @@ public class ShotScript : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collider)
 	{
-		print("hit2"); //this one never gets called for some reason
+		//print("hit2"); //this one never gets called for some reason
 
 		if(collider.gameObject.name == "wall_horizontal" || collider.gameObject.name == "vertical" || collider.gameObject.name == "wall_vertical")
 		{

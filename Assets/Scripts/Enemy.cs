@@ -6,6 +6,8 @@ public class Enemy : Character {
 	public bool isInsulter = false;
 	public bool isHugger = false;
 
+	public int Direction = 0;
+
 	//Attributes
 	float timer;
 
@@ -36,15 +38,19 @@ public class Enemy : Character {
 		}
 			if(randVal >= 0.0f && randVal <1.0f){
 				this.transform.position +=  transform.up * 0.05f;
+			Direction = 0;
 			}
 			else if(randVal >= 1.0f && randVal <2.0f){
 				this.transform.position +=  transform.right * -0.05f;
+			Direction = 1;
 			}
 			else if(randVal >= 2.0f && randVal <3.0f){
 				this.transform.position +=  transform.up * -0.05f;
+			Direction = 2;
 			}
 			else{
 				this.transform.position +=  transform.right * 0.05f;
+			Direction = 3;
 			}
 
 			

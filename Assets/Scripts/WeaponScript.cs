@@ -44,10 +44,30 @@ public class WeaponScript : MonoBehaviour {
 			
 			// Make the weapon shot always towards it
 			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
+			/*
 			if (move != null)
 			{
-				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+				GameObject daPlayer = GameObject.FindGameObjectWithTag("PlayerTag");
+				PlayerScript playerInfo = daPlayer.GetComponent<PlayerScript>();
+				print ("\n directionPlayer " + playerInfo.directionS);
+				if(playerInfo.directionS == 0){
+					//move.direction = new Vector2(0,1);
+					// here
+					move.direction.x = 0;
+					move.direction.y = 0;
+				}
+				if(playerInfo.directionS == 1){
+					move.direction = new Vector2(-1,0); // here
+				}
+				if(playerInfo.directionS == 2){
+					move.direction = new Vector2(0,-1); // here
+				}
+				if(playerInfo.directionS == 3){
+					move.direction = new Vector2(1,0); // here
+				}
+
 			}
+			*/
 		}
 	}
 

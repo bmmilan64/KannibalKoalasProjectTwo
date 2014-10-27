@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
-
+	
 	private GUISkin skin;
 	
 	void Start()
@@ -13,22 +13,31 @@ public class MenuScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		const int buttonWidth = 128;
-		const int buttonHeight = 60;
+		//layour in 10ths
+		int bWidth = Screen.width / 10;
+		int bHeight = Screen.height / 10;
 		
-		// Set the skin to use
 		GUI.skin = skin;
 		
-		// Draw a button to start the game
+		// START BUTTON
 		if (GUI.Button(
-			// Center in X, 2/3 of the height in Y
-			new Rect(Screen.width / 2 - (buttonWidth / 2), (2 * Screen.height / 3) - (buttonHeight / 2), buttonWidth, buttonHeight),
-			"START"
-			))
+			new Rect(Screen.width / 2 - (bWidth / 2), (8 * Screen.height / 10) - (bHeight / 2), bWidth, bHeight),
+			"New Game"))
 		{
-			// On Click, load the first level.
-			Application.LoadLevel("Game"); // "Stage1" is the scene name
+			// On Click, load the level
+			Application.LoadLevel("Game"); // scene name
 		}
+		
+		// INSTRUCTIONS BUTTON
+		if (GUI.Button(
+			new Rect(Screen.width / 2 - (bWidth / 2), (9 * Screen.height / 10) - (bHeight / 2), bWidth, bHeight),
+			"Instructions"))
+		{
+			// On Click, load the level
+			Application.LoadLevel("Instructions"); // scene name
+		}
+		
+		// game title(demo)
+		//GUI.Label(new Rect((Screen.width / 2 - 50), Screen.height / 2, Screen.width, Screen.height), "Game Image Here");
 	}
-
 }

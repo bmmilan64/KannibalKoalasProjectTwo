@@ -23,6 +23,10 @@ public class flyingInsult : MonoBehaviour {
 
 		vecDir.Normalize();
 
+		//Vector3 newSpawn = new Vector3((vecDir.x *1.5),(vecDir.y *1.5),0.0)
+		//float addddd = (vecDir.x *2);
+		//this.transform.position.x += addddd;
+
 		Destroy(gameObject, 1);
 	}
 
@@ -37,11 +41,11 @@ public class flyingInsult : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collider)
 	{
 
-		print("what hit?");
+		//print("what hit?");
 		if(collider.gameObject.name == "wall_horizontal" || collider.gameObject.name == "vertical" || collider.gameObject.name == "wall_vertical")
 		{
 			Destroy(gameObject);
-			print("hit wall");
+			//print("hit wall");
 		}
 
 		if(collider.gameObject.name == "player")
@@ -50,7 +54,7 @@ public class flyingInsult : MonoBehaviour {
 			GameObject daPlayer = GameObject.FindGameObjectWithTag("PlayerTag");
 			PlayerScript playerInfo = daPlayer.GetComponent<PlayerScript>();
 			playerInfo.hp -= 5;
-			print("hit player");
+			//print("hit player");
 		}
 	}
 }

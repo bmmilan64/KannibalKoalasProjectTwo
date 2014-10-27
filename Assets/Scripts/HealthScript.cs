@@ -34,9 +34,10 @@ public class HealthScript : MonoBehaviour {
 				Destroy(gameObject);
 
 				//spawns item
-				GameObject it;
+				//GameObject it;
 				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
-				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+				//it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+
 			}
 			if(gameObject.name == "Hugger(Clone)"){
 				GameObject daGM = GameObject.FindGameObjectWithTag("GM");
@@ -54,7 +55,7 @@ public class HealthScript : MonoBehaviour {
 				//spawns item
 				GameObject it;
 				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
-				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+				//it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
 			}
 			if(gameObject.name == "Insulter(Clone)"){
 				GameObject daGM = GameObject.FindGameObjectWithTag("GM");
@@ -73,6 +74,7 @@ public class HealthScript : MonoBehaviour {
 				GameObject it;
 				Vector3 itLoc = new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z );
 				it = (GameObject) GameObject.Instantiate(ItemPre, itLoc, Quaternion.identity);//spawns two items for some reason...~John
+				GMInfo.itemList.Add(it);
 			}
 		}
 	}
